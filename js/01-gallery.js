@@ -4,9 +4,10 @@ import { galleryItems } from './gallery-items.js';
 const gallery = document.querySelector('.gallery');
 
 const galleryItemsHtml = galleryItems
-  .map(imageItem => {
-    return `<div class="gallery__item"><a class="gallery__link" href="${imageItem.original}"><img class="gallery__image" src="${imageItem.preview}" data-source="${imageItem.original}" alt="${imageItem.description}"/></a></div>`;
-  })
+  .map(
+    imageItem =>
+      `<div class="gallery__item"><a class="gallery__link" href="${imageItem.original}"><img class="gallery__image" src="${imageItem.preview}" data-source="${imageItem.original}" alt="${imageItem.description}"/></a></div>`
+  )
   .join('');
 
 gallery.insertAdjacentHTML('afterbegin', galleryItemsHtml);
