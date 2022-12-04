@@ -25,7 +25,11 @@ gallery.addEventListener('click', event => {
 
   instance.show();
 
-  gallery.addEventListener('keydown', event => {
+  const handleKeydown = event => {
     event.code === 'Escape' ? instance.close() : {};
-  });
+    console.log('Test');
+    document.removeEventListener('keydown', handleKeydown);
+  };
+
+  document.addEventListener('keydown', handleKeydown);
 });
